@@ -25,7 +25,7 @@
     BOOL isPlay;
 }
 
-- (id)init;
+
 
 - (void)stop;
 - (void)resume;

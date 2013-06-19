@@ -10,14 +10,6 @@
 
 @implementation Player
 
-- (id)init {
-    if (self = [super init]) {
-        sound = [NSSound alloc];
-        [sound setDelegate: self];
-    }
-
-    return self;
-}
 
 // Остановить проигрывание
 - (void)stop {
@@ -61,6 +53,9 @@
     }
     
     // Открыть файл и запустить
+    sound = nil;
+    sound = [NSSound alloc];
+    [sound setDelegate: self];
     sound = [sound initWithContentsOfFile:path byReference:false];
     [sound play];
     isPlay = YES;
